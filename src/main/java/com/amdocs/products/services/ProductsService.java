@@ -21,11 +21,6 @@ public class ProductsService {
     public ProductsRepository productsRepository;
 
 
-    @Autowired
-    public ProductsService(ProductsRepository productRepository, PricingRepository pricingRepository) {
-        this.productsRepository = productRepository;
-        this.pricingRepository = pricingRepository;
-    }
 
     @Autowired
     public PricingRepository pricingRepository;
@@ -47,7 +42,6 @@ public class ProductsService {
 
     public void addProduct(Products products) {
            LocalDate date = LocalDate.now();
-
             products.setCreationDate(date);
             products.getPricing().setCreationDate(date);
             productsRepository.save(products);

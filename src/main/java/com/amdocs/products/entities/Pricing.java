@@ -18,8 +18,8 @@ public class Pricing {
     private Integer id;
 
 
-    @OneToOne(mappedBy = "pricing")
-    private Products product;
+
+
 
 
     private double price;
@@ -53,13 +53,6 @@ public class Pricing {
         this.id = pricingId;
     }
 
-    public Products getProduct() {
-        return product;
-    }
-
-    public void setProduct(Products product) {
-        this.product = product;
-    }
 
     public double getPrice() {
         return price;
