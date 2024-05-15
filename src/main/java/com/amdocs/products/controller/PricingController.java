@@ -21,7 +21,7 @@ public class PricingController {
         return pricingService.getAllPricings();
     }
 
-
+  //This endpoint adds a Price to DB
     @RequestMapping(method = RequestMethod.POST, value = "/pricing")
     public void addPrice(@RequestBody Pricing pricing){
         pricingService.addPrice(pricing);
