@@ -1,6 +1,8 @@
 package com.amdocs.products.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -53,6 +55,7 @@ public class Pricing {
         this.id = pricingId;
     }
 
+    @JsonBackReference
     public Products getProduct() {
         return product;
     }
