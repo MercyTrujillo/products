@@ -18,10 +18,6 @@ public class Pricing {
     private Integer id;
 
 
-
-
-
-
     private double price;
 
     private double tax;
