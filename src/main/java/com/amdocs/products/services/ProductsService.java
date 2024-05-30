@@ -1,14 +1,13 @@
 package com.amdocs.products.services;
 
-import com.amdocs.products.entities.Pricing;
+import com.amdocs.products.ProductsApplication;
 import com.amdocs.products.entities.Products;
 import com.amdocs.products.repository.PricingRepository;
 import com.amdocs.products.repository.ProductsRepository;
-import com.amdocs.products.request.PricingRequest;
 import com.amdocs.products.request.ProductsRequest;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -45,23 +44,14 @@ public class ProductsService {
         Products product = new Products();
         product.setProductName(productsRequest.getProductName());
         product.setDescription(productsRequest.getDescription());
-
-        Pricing pricing = pricingRepository.findById(productsRequest.getPricingId())
-                .orElseThrow(() -> new EntityNotFoundException("No se encontró el precio con el ID: " + productsRequest.getPricingId()));
-        product.setPricing(pricing);
+        product.setPricing(productsRequest.getPricing());
         product.setCreationDate(LocalDate.now());
+        product.getPricing().setCreationDate(LocalDate.now());
+        pricingRepository.save(productsRequest.getPricing());
         productsRepository.save(product);
     }
 }
 
-
-//    public void addProduct(Products products) {
-//           LocalDate date = LocalDate.now();
-//            products.setCreationDate(date);
-//            products.getPricing().setCreationDate(date);
-//            productsRepository.save(products);
-//        }
-//    }
 
 
 
