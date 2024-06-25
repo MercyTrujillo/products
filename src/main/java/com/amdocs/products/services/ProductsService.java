@@ -1,13 +1,11 @@
 package com.amdocs.products.services;
 
-import com.amdocs.products.ProductsApplication;
 import com.amdocs.products.entities.Products;
 import com.amdocs.products.repository.PricingRepository;
 import com.amdocs.products.repository.ProductsRepository;
 import com.amdocs.products.request.ProductsRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -34,7 +32,7 @@ public class ProductsService {
     }
 
 
-    public Optional<Products> getProduct(Integer productId) {
+    public Optional<Products> getProductById(Integer productId) {
         Optional<Products> product = productsRepository.findById(productId);
         return product;
     }

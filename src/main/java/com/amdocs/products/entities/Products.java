@@ -29,6 +29,8 @@ public class Products {
     private String productName;
     private String description;
 
+
+
     @CreatedDate
     @Column(name = "creation_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -43,6 +45,7 @@ public class Products {
         this.productName = productName;
         this.description = description;
         this.creationDate = creationDate;
+
     }
 
     public Integer getProductId() {
@@ -84,5 +87,7 @@ public class Products {
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
+
+
 }
 

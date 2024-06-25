@@ -13,11 +13,23 @@ public class ProductsResponse {
 
     private LocalDate date;
 
-    public ProductsResponse(String productName, String description, Pricing pricing, LocalDate date) {
+    private Integer pricingId;
+
+    public ProductsResponse(String productName, String description, Pricing pricing, LocalDate date, Integer pricingId) {
         this.productName = productName;
         this.description = description;
         this.pricing = pricing;
         this.date = date;
+        this.pricingId =pricingId;
+    }
+
+
+    public Integer getPricingId() {
+        return pricingId;
+    }
+
+    public void setPricingId(Integer pricingId) {
+        this.pricingId = pricingId;
     }
 
     public String getProductName() {

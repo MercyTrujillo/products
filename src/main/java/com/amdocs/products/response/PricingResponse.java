@@ -7,10 +7,13 @@ public class PricingResponse {
 
     private double discount;
 
+    private double tax;
 
-    public PricingResponse(double price, double discount) {
+
+    public PricingResponse(double price, double discount, double tax) {
         this.price = price;
         this.discount = discount;
+        this.tax = tax;
     }
 
     public double getPrice() {
@@ -27,5 +30,13 @@ public class PricingResponse {
 
     public void setDiscount(double discount){
         this.discount = discount;
+    }
+
+    public double getTax() {
+        return tax;
+    }
+
+    public void setTax(double tax) {
+        this.tax = tax;
     }
 }

@@ -11,12 +11,17 @@ public class ProductsRequest {
 
     private PricingRequest pricingRequest;
 
+
+
     public ProductsRequest(String productName, String description, PricingRequest pricingRequest, Pricing pricing) {
         this.productName = productName;
         this.description = description;
         this.pricing = pricing;
         this.pricingRequest = pricingRequest;
+
     }
+
+
 
 
     public String getProductName() {

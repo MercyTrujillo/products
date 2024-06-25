@@ -2,6 +2,7 @@ package com.amdocs.products.controller;
 
 import com.amdocs.products.ProductsApplication;
 import com.amdocs.products.entities.Pricing;
+import com.amdocs.products.entities.Products;
 import com.amdocs.products.request.PricingRequest;
 import com.amdocs.products.services.PricingService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,12 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @Slf4j
@@ -32,11 +31,11 @@ public class PricingController {
         return pricingService.getAllPricings();
     }
 
-  //This endpoint adds a Price to DB
-//    @RequestMapping(method = RequestMethod.POST, value = "/pricing")
-//    public void addPrice(@RequestBody Pricing pricing){
-//        pricingService.addPrice(pricing);
-//    }
+    @RequestMapping(method = RequestMethod.GET,value = "/pricing/{id}")
+    public Optional<Pricing> getPriceById(@PathVariable Integer id){
+        return pricingService.getPriceById(id);
+
+    }
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pricing")
