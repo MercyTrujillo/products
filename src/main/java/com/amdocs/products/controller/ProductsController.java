@@ -2,6 +2,7 @@ package com.amdocs.products.controller;
 
 import com.amdocs.products.entities.Products;
 import com.amdocs.products.request.ProductsRequest;
+import com.amdocs.products.response.ProductsResponse;
 import com.amdocs.products.services.ProductsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
