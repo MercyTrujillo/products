@@ -38,14 +38,11 @@ public class PricingService {
 
 
     public void addPrice(PricingRequest pricingRequest) {
-
         Pricing pricing = new Pricing();
-
         pricing.setPrice(pricingRequest.getPrice());
         pricing.setTax(pricingRequest.getTax());
         pricing.setDiscount(pricingRequest.getDiscount());
         pricing.setCreationDate(LocalDate.now());
-
         pricingRepository.save(pricing);
     }
 }

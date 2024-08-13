@@ -3,6 +3,7 @@ package com.amdocs.products.response;
 import com.amdocs.products.entities.Pricing;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class ProductsResponse {
 
@@ -15,12 +16,15 @@ public class ProductsResponse {
 
     private Integer pricingId;
 
+
+
     public ProductsResponse(String productName, String description, Pricing pricing, LocalDate date, Integer pricingId) {
         this.productName = productName;
         this.description = description;
         this.pricing = pricing;
         this.date = date;
         this.pricingId =pricingId;
+
     }
 
 
@@ -67,4 +71,7 @@ public class ProductsResponse {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+
+
 }

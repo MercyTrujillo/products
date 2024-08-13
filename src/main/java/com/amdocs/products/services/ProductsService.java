@@ -4,9 +4,11 @@ import com.amdocs.products.entities.Products;
 import com.amdocs.products.repository.PricingRepository;
 import com.amdocs.products.repository.ProductsRepository;
 import com.amdocs.products.request.ProductsRequest;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public class ProductsService {
 
 
     public void addProduct(ProductsRequest productsRequest) {
+
         Products product = new Products();
         product.setProductName(productsRequest.getProductName());
         product.setDescription(productsRequest.getDescription());
@@ -49,6 +52,9 @@ public class ProductsService {
         pricingRepository.save(productsRequest.getPricing());
         productsRepository.save(product);
     }
+
+
+
 }
 
 

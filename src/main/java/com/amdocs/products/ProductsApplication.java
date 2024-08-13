@@ -18,7 +18,7 @@ public class ProductsApplication {
 		app.setDefaultProperties(Collections.singletonMap("server.port", "8082"));
 		app.run(args);
 		log.info("Mercy Jacqueline Trujillo Rodriguezzzzzz");
-//		log.error()g.warn();
+
 	};
 
 

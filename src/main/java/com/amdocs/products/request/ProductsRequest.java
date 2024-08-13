@@ -2,6 +2,8 @@ package com.amdocs.products.request;
 
 import com.amdocs.products.entities.Pricing;
 
+import java.util.UUID;
+
 public class ProductsRequest {
 
     private String productName;
@@ -13,11 +15,15 @@ public class ProductsRequest {
 
 
 
+
+
     public ProductsRequest(String productName, String description, PricingRequest pricingRequest, Pricing pricing) {
         this.productName = productName;
         this.description = description;
         this.pricing = pricing;
         this.pricingRequest = pricingRequest;
+
+
 
     }
 
@@ -55,5 +61,6 @@ public class ProductsRequest {
     public void setPricing(Pricing pricing){
          this.pricing = pricing;
     }
+
 
 }

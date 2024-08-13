@@ -10,7 +10,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDate;
 
 
-
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name="products")
@@ -31,6 +30,12 @@ public class Products {
 
 
 
+
+    private String image;
+
+
+
+
     @CreatedDate
     @Column(name = "creation_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -40,11 +45,12 @@ public class Products {
 
     }
 
-    public Products(Pricing pricing, String productName, String description, LocalDate creationDate) {
+    public Products(Pricing pricing, String productName, String description, LocalDate creationDate, String image) {
         this.pricing = pricing;
         this.productName = productName;
         this.description = description;
         this.creationDate = creationDate;
+        this.image = image;
 
     }
 
@@ -89,5 +95,12 @@ public class Products {
     }
 
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
 
