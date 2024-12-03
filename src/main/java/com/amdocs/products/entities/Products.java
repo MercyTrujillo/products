@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.sql.Blob;
 import java.time.LocalDate;
 
 
@@ -31,8 +32,6 @@ public class Products {
 
 
 
-    private String image;
-
 
 
 
@@ -45,12 +44,12 @@ public class Products {
 
     }
 
-    public Products(Pricing pricing, String productName, String description, LocalDate creationDate, String image) {
+    public Products(Pricing pricing, String productName, String description, LocalDate creationDate) {
         this.pricing = pricing;
         this.productName = productName;
         this.description = description;
         this.creationDate = creationDate;
-        this.image = image;
+
 
     }
 
@@ -95,12 +94,7 @@ public class Products {
     }
 
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+
 }
 

@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public class ProductsResponse {
 
+
     private String productName;
     private String description;
 
@@ -17,8 +18,8 @@ public class ProductsResponse {
     private Integer pricingId;
 
 
-
     public ProductsResponse(String productName, String description, Pricing pricing, LocalDate date, Integer pricingId) {
+
         this.productName = productName;
         this.description = description;
         this.pricing = pricing;
@@ -26,6 +27,8 @@ public class ProductsResponse {
         this.pricingId =pricingId;
 
     }
+
+
 
 
     public Integer getPricingId() {

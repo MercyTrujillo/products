@@ -9,11 +9,13 @@ public class PricingResponse {
 
     private double tax;
 
+    private String image;
 
-    public PricingResponse(double price, double discount, double tax) {
+    public PricingResponse(double price, double discount, double tax, String image) {
         this.price = price;
         this.discount = discount;
         this.tax = tax;
+        this.image = image;
     }
 
     public double getPrice() {
@@ -38,5 +40,13 @@ public class PricingResponse {
 
     public void setTax(double tax) {
         this.tax = tax;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
